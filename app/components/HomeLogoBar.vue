@@ -11,12 +11,22 @@
       <div class="flex-1 max-w-lg mx-auto">
         <UTooltip text="Coming Soon" :popper="{ placement: 'bottom' }">
           <UInput
-            icon="i-lucide-search"
             placeholder="Cari disini"
             disabled
+            variant="outline"
             class="w-full"
-            :ui="{ icon: { trailing: { pointer: '' } } }"
-          />
+            :ui="{
+              root: 'w-full',
+              base: 'rounded-full border-2 border-slate-800 focus:ring-slate-800'
+            }"
+          >
+            <template #leading>
+              <UIcon name="i-lucide-sliders-horizontal" class="w-5 h-5 text-slate-600" />
+            </template>
+            <template #trailing>
+              <UIcon name="i-lucide-search" class="w-5 h-5 text-slate-600" />
+            </template>
+          </UInput>
         </UTooltip>
       </div>
 

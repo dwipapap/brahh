@@ -27,21 +27,19 @@
       <!-- Center: Search Bar -->
       <div class="flex-1 max-w-2xl hidden md:block">
         <UInput
-          icon="i-lucide-sliders-horizontal"
           :placeholder="searchPlaceholder"
           size="lg"
-          class="w-full"
-          :ui="{ rounded: 'rounded-full' }"
+          variant="outline"
+          :ui="{
+            root: 'w-full',
+            base: 'rounded-full border-2 border-slate-800 focus:ring-slate-800'
+          }"
         >
+          <template #leading>
+            <UIcon name="i-lucide-sliders-horizontal" class="w-5 h-5 text-slate-600" />
+          </template>
           <template #trailing>
-            <UButton
-              color="gray"
-              variant="ghost"
-              icon="i-lucide-search"
-              :padded="false"
-              class="pointer-events-auto"
-              aria-label="Search"
-            />
+            <UIcon name="i-lucide-search" class="w-5 h-5 text-slate-600" />
           </template>
         </UInput>
       </div>
@@ -58,21 +56,19 @@
     <!-- Mobile Search Bar (Visible only on small screens) -->
     <UContainer class="mt-4 md:hidden">
       <UInput
-        icon="i-lucide-sliders-horizontal"
         :placeholder="searchPlaceholder"
         size="lg"
-        class="w-full"
-        :ui="{ rounded: 'rounded-full' }"
+        variant="outline"
+        :ui="{
+          root: 'w-full',
+          base: 'rounded-full border-2 border-slate-800 focus:ring-slate-800'
+        }"
       >
+        <template #leading>
+          <UIcon name="i-lucide-sliders-horizontal" class="w-5 h-5 text-slate-600" />
+        </template>
         <template #trailing>
-          <UButton
-            color="gray"
-            variant="ghost"
-            icon="i-lucide-search"
-            :padded="false"
-            class="pointer-events-auto"
-            aria-label="Search"
-          />
+          <UIcon name="i-lucide-search" class="w-5 h-5 text-slate-600" />
         </template>
       </UInput>
     </UContainer>
