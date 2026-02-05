@@ -7,22 +7,35 @@ defineProps({
   description: {
     type: String,
     required: true
+  },
+  image: {
+    type: String,
+    required: true
   }
 })
 </script>
 
 <template>
-  <UCard data-testid="feature-card" class="text-center h-full">
-    <div class="bg-slate-100 rounded-lg h-48 mb-4 flex items-center justify-center">
-      <UIcon name="i-lucide-image" class="w-12 h-12 text-slate-300" />
+  <div 
+    class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 h-full flex flex-col"
+    data-testid="feature-card"
+  >
+    <div class="h-48 overflow-hidden">
+      <img 
+        :src="image" 
+        :alt="title" 
+        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+      />
     </div>
     
-    <h3 class="text-amber-500 font-bold mb-2 text-lg">
-      {{ title }}
-    </h3>
-    
-    <p class="text-slate-600 text-sm">
-      {{ description }}
-    </p>
-  </UCard>
+    <div class="p-6 text-center flex-1 flex flex-col items-center">
+      <h3 class="text-amber-500 font-bold text-xl mb-3">
+        {{ title }}
+      </h3>
+      
+      <p class="text-slate-600 text-base leading-relaxed">
+        {{ description }}
+      </p>
+    </div>
+  </div>
 </template>
