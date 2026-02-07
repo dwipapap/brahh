@@ -3,8 +3,13 @@
     <UContainer class="flex items-center justify-between gap-4">
       <!-- Logo Section -->
       <div class="flex items-center gap-2">
-        <UIcon name="i-lucide-sparkles" class="w-6 h-6 text-primary-500" />
-        <span class="text-xl font-bold text-slate-900">Branova</span>
+      <NuxtLink to="/">
+        <img 
+          src="/logobranova.png" 
+          alt="Logo Branova" 
+          class="h-8 w-auto object-contain" 
+        />
+      </NuxtLink>
       </div>
 
       <!-- Search Section -->
@@ -34,19 +39,19 @@
       <div class="flex items-center gap-1">
         <UButton
           icon="i-lucide-heart"
-          color="gray"
+          color="neutral"
           variant="ghost"
           aria-label="Wishlist"
         />
         <UButton
           icon="i-lucide-bell"
-          color="gray"
+          color="neutral"
           variant="ghost"
           aria-label="Notifications"
         />
         <UButton
           icon="i-lucide-user"
-          color="gray"
+          color="neutral"
           variant="ghost"
           aria-label="Profile"
         />

@@ -1,11 +1,15 @@
 <template>
   <div class="bg-white py-4 border-b border-gray-100">
     <UContainer class="flex items-center justify-between gap-4">
-      <!-- Left: Logo Section with Navigation -->
       <div class="flex items-center gap-3">
-        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center">
-          <UIcon name="i-lucide-users" class="text-white text-xl" />
-        </div>
+        <NuxtLink to="/">
+          <img 
+            src="/logobranova.png" 
+            alt="Logo Branova" 
+            class="h-12 w-auto object-contain"
+          />
+        </NuxtLink>
+
         <div class="flex flex-col">
           <NuxtLink 
             to="/connect-collaboration" 
@@ -24,7 +28,6 @@
         </div>
       </div>
 
-      <!-- Center: Search Bar -->
       <div class="flex-1 max-w-2xl hidden md:block">
         <UInput
           :placeholder="searchPlaceholder"
@@ -44,7 +47,6 @@
         </UInput>
       </div>
 
-      <!-- Right: Action Icons -->
       <div class="flex items-center gap-2">
         <UButton icon="i-lucide-bell" color="neutral" variant="ghost" size="lg" aria-label="Notifications" />
         <UButton icon="i-lucide-heart" color="neutral" variant="ghost" size="lg" aria-label="Wishlist" />
@@ -53,7 +55,6 @@
       </div>
     </UContainer>
     
-    <!-- Mobile Search Bar (Visible only on small screens) -->
     <UContainer class="mt-4 md:hidden">
       <UInput
         :placeholder="searchPlaceholder"
