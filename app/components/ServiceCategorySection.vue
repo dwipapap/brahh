@@ -1,33 +1,32 @@
 <template>
-  <section class="py-8 bg-slate-50">
-    <UContainer>
-      <!-- Header -->
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Jenis Layanan</h2>
-        <a href="#" class="group flex items-center gap-1 text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">
-          Lihat semua
-          <UIcon name="i-lucide-arrow-right" class="w-4 h-4 transition-transform group-hover:translate-x-1" />
-        </a>
-      </div>
+  <div class="max-w-7xl mx-auto px-4 md:px-6 mb-12">
+    
+    <div class="flex justify-between items-end mb-6">
+      <h2 class="text-2xl font-bold text-slate-900">Jenis Layanan</h2>
+      <NuxtLink to="/layanan" class="text-sm font-medium text-slate-500 hover:text-indigo-600 flex items-center gap-1 transition-colors">
+        Lihat semua
+        <UIcon name="i-lucide-chevron-right" class="w-4 h-4" />
+      </NuxtLink>
+    </div>
 
-      <!-- Carousel -->
-      <UCarousel
-        v-slot="{ item }"
-        :items="services"
-        :ui="{ item: 'basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/5 pe-4' }"
-      >
-        <ServiceCard :title="item.title" :to="item.to" />
-      </UCarousel>
-    </UContainer>
-  </section>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
+      <ServiceCard
+        v-for="service in services"
+        :key="service.title"
+        :title="service.title"
+        :image="service.image" 
+        :to="service.to"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 const services = [
-  { title: 'Desain Logo', to: '/desain-logo' },
-  { title: 'Desain Kemasan', to: '#' },
-  { title: 'Maskot', to: '#' },
-  { title: 'Banner', to: '#' },
-  { title: 'Website Gratis', to: '#' }
+  { title: 'Desain Logo', image: '/logo.png', to: '/desain-logo' },
+  { title: 'Desain Kemasan', image: '/kemasan.png', to: '/desain-kemasan' },
+  { title: 'Maskot', image: '/maskot.png', to: '/layanan-maskot' },
+  { title: 'Banner', image: '/banner.png', to: '/layanan-banner' },
+  { title: 'Website Gratis', image: '/website.png', to: '/layanan-website' }
 ]
 </script>

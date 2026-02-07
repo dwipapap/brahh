@@ -19,7 +19,13 @@
       class="flex-1 w-full bg-slate-700 rounded-lg h-64 lg:h-80 flex items-center justify-center"
       data-testid="hero-placeholder"
     >
-      <UIcon name="i-lucide-image" class="text-4xl text-slate-500" />
+      <div class="flex-1 w-full overflow-hidden rounded-lg h-64 lg:h-80">
+  <img 
+    src="/section.png" 
+    alt="Hero Branova" 
+    class="w-full h-full object-cover"
+  />
+</div>
     </div>
   </div>
 </template>
